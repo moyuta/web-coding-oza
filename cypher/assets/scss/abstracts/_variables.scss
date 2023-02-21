@@ -1,0 +1,42 @@
+
+// ---------------------------------------------------------------------------
+// Media Queries (変数のみを使用する場合)
+// ---------------------------------------------------------------------------
+$mq_min_769: '(min-width: 769px)';
+$mq_max_768: '(max-width: 768px)';
+$mq_max_480: '(max-width: 480px)';
+$mq_max_375: '(max-width: 375px)';
+$mq_max_320: '(max-width: 320px)';
+
+// ---------------------------------------------------------------------------
+// Media Queries (ミックスインを使用する場合)
+// ---------------------------------------------------------------------------
+$mq-breakpoints: (
+  'xxxlarge': 100em,
+  'xxlarge': 93.750em, // 1199px
+  'xlarge': 74.9375em, // 1199px
+  'large' : 64em,      // 1024px
+  'medium': 48.0625em,      // 768px
+  'small' : 33.9375em, // 543px
+  'xsmall': 20em       // 320px
+);
+
+// ---------------------------------
+// Other Breakpoints
+// ---------------------------------
+//      75em == 1200px
+// 64.0625em == 1025px
+// 48.0625em == 769px
+//      34em == 544px
+// 20.0625em == 321px
+//
+
+// Fonts
+$baseFontFamily: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ ゴシック","MS Gothic",sans-serif;
+
+// Colors
+$colorText: #333;
+$base-content-color: #118d6a;
+$main-color:#A7212F;
+$sub-color:#575D90;
+$btn-color:#F8F8FD;
