@@ -28,8 +28,7 @@
       li{
         a{
           font-size: 22px;
-          @media only screen and (max-width: $tb) {
-            
+          @media only screen and (max-width: $tb) {  
           }
         }
         &:last-of-type{
