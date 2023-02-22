@@ -59,7 +59,11 @@ img {
 }
 
 a {
+  color: $colorText;
   text-decoration: none;
+  &:hover{
+    opacity: .7;
+  }
 }
 
 li, nav ul, ol, ul{

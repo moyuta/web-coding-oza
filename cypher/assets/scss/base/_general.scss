@@ -7,3 +7,15 @@
   
 }
 
+
+.is-pc {
+  display: none !important;
+  @include mq(medium, min, true) {
+    display: block !important;
+  }
+}
+@include mq(medium, min, true) {
+  .is-sp {
+    display: none !important;
+  }
+}
