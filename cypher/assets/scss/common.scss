@@ -1,4 +1,62 @@
-@use "../abstracts/index" as *;
+
+// Fonts
+$baseFontFamily: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+
+// Colors
+$colorText: #333;
+$main-color:#A7212F;
+$sub-color:#575D90;
+$btn-color:#F8F8FD;
+
+
+$tb:  768px;
+$tb-min:  769px;
+
+@mixin tablet {
+  @media only screen and (min-width: ($tb-min)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: ($tb)) {
+    @content;
+  }
+}
+
+
+
+@function contWidth($num,$base){ 
+  @return calc($num / $base) * 100%;
+}
+
+
+@function vwPC($num){
+  @return 100vw * calc($num / 1920);
+}
+@function vwSP($num){
+  @return 100vw * calc($num * 2 / 750);
+}
+
+
+.wrapper{
+  
+}
+
+
+.is-pc {
+  display: none !important;
+  @include tablet {
+    display: block !important;
+  }
+}
+@include tablet {
+  .is-sp {
+    display: none !important;
+  }
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -61,6 +119,7 @@ img {
 a {
   color: $colorText;
   text-decoration: none;
+  font-size: 200px;
   &:hover{
     opacity: .7;
   }
@@ -151,7 +210,4 @@ summary{
     display:none;
   }
 }
-
-
-
 
