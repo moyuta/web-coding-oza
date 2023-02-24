@@ -2,7 +2,6 @@
   <div class="l-wrapper">
     <Header></Header>
     <NuxtPage />
-    <div>フッター</div>
   </div>
 </template>
 
@@ -15,6 +14,6 @@ export default {
 
 <style lang='scss' scoped>
 .l-wrapper {
-  // background-color: $sub-color;
+  background-color: #eee;
 }
 </style>
