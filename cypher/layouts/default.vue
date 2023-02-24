@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="l-wrapper">
     <Header></Header>
     <NuxtPage />
     <div>フッター</div>
@@ -12,3 +12,9 @@ export default {
   components: { Header },
 };
 </script>
+
+<style lang='scss' scoped>
+.l-wrapper {
+  // background-color: $sub-color;
+}
+</style>
