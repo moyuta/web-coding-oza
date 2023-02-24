@@ -6,27 +6,29 @@
       <span></span>
     </button>
     <nav class="nav">
-      <ul class="nav-list">
-        <li><nuxt-link to="/">ホーム</nuxt-link></li>
-        <li><nuxt-link to="/">私達について</nuxt-link></li>
-        <li><nuxt-link to="/">選ばれる理由</nuxt-link></li>
-        <li><nuxt-link to="/">ワークフロー</nuxt-link></li>
-        <li><nuxt-link to="/">FAQ</nuxt-link></li>
-        <li><nuxt-link to="/">事例紹介</nuxt-link></li>
-        <li><nuxt-link to="/">会社概要</nuxt-link></li>
-        <li><nuxt-link to="/">お問合せ・お見積</nuxt-link></li>
-        <li><nuxt-link to="/">個人情報保護法について</nuxt-link></li>
-      </ul>
-      <div class="nav-sns is-sp">
-        <a href="" class="nav-sns__icon">
-          <img src="@/assets/svg/icon-facebook.svg" alt="facebook" />
-        </a>
-        <a href="" class="nav-sns__icon">
-          <img src="@/assets/svg/icon-instagram.svg" alt="instagram" />
-        </a>
-        <a href="" class="nav-sns__icon">
-          <img src="@/assets/svg/icon-pintarest.svg" alt="pintarest" />
-        </a>
+      <div class="nav-inner">
+        <ul class="nav-list">
+          <li><nuxt-link to="/">ホーム</nuxt-link></li>
+          <li><nuxt-link to="/">私達について</nuxt-link></li>
+          <li><nuxt-link to="/">選ばれる理由</nuxt-link></li>
+          <li><nuxt-link to="/">ワークフロー</nuxt-link></li>
+          <li><nuxt-link to="/">FAQ</nuxt-link></li>
+          <li><nuxt-link to="/">事例紹介</nuxt-link></li>
+          <li><nuxt-link to="/">会社概要</nuxt-link></li>
+          <li><nuxt-link to="/">お問合せ・お見積</nuxt-link></li>
+          <li><nuxt-link to="/">個人情報保護法について</nuxt-link></li>
+        </ul>
+        <div class="nav-sns is-sp">
+          <a href="" class="nav-sns__icon">
+            <img src="@/assets/svg/icon-facebook.svg" alt="facebook" />
+          </a>
+          <a href="" class="nav-sns__icon">
+            <img src="@/assets/svg/icon-instagram.svg" alt="instagram" />
+          </a>
+          <a href="" class="nav-sns__icon">
+            <img src="@/assets/svg/icon-pintarest.svg" alt="pintarest" />
+          </a>
+        </div>
       </div>
     </nav>
   </div>
@@ -47,9 +49,8 @@ export default {
   @include mobile {
     background-color: #fff;
     position: relative;
-    padding-block-end: 25px;
-
     // height: 100vh;
+
     .menu-btn {
       display: flex;
       flex-direction: column;
@@ -59,7 +60,7 @@ export default {
       height: 35px;
       position: absolute;
       right: 20px;
-      top: -50px;
+      top: 15px;
       background-color: #f00;
       cursor: pointer;
       & > * + * {
@@ -76,13 +77,17 @@ export default {
 
   .nav {
     @include mobile {
-      border: 1px solid $colorText;
-      margin-inline: 20px;
-      padding-inline: 30px;
-      margin-block-start: 65px;
+      padding-block-start: 65px;
+      padding-block-end: 25px;
+      &-inner {
+        border: 1px solid $colorText;
+        margin-inline: 20px;
+        padding-inline: 30px;
+      }
     }
     &-list {
       display: flex;
+
       & > * + * {
         margin-inline: 40px 0;
         @include mobile {
