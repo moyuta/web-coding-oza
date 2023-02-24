@@ -15,6 +15,6 @@ export default {
 
 <style lang='scss' scoped>
 .l-wrapper {
-  // background-color: $sub-color;
+  background-color: #eee;
 }
 </style>
