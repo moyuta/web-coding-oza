@@ -112,12 +112,7 @@ img {
 }
 
 a {
-  color: $colorText;
   text-decoration: none;
-  font-size: 200px;
-  &:hover{
-    opacity: .7;
-  }
 }
 
 li, nav ul, ol, ul{
@@ -149,7 +144,7 @@ button{
   -moz-appearance: none;
   appearance: none;
   text-indent:-9999px;
-
+  cursor: pointer;
 }
 
 

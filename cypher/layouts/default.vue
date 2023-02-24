@@ -2,7 +2,6 @@
   <div class="l-wrapper">
     <Header></Header>
     <NuxtPage />
-    <div>フッター</div>
   </div>
 </template>
 
