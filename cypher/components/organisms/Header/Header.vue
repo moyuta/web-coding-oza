@@ -56,12 +56,12 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 35px;
-      height: 35px;
+      width: 36px;
+      height: 36px;
       position: absolute;
       right: 20px;
       top: 15px;
-      background-color: #f00;
+      background-color: #fff;
       cursor: pointer;
       & > * + * {
         margin-block-start: 5px;
@@ -79,6 +79,9 @@ export default {
     @include mobile {
       padding-block-start: 65px;
       padding-block-end: 25px;
+      position: absolute;
+      width: 100%;
+      transform: translateX(-100vh);
       &-inner {
         border: 1px solid $colorText;
         margin-inline: 20px;
