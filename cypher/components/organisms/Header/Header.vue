@@ -1,10 +1,10 @@
 <template>
   <div class="l-header">
-    <!-- <div class="menu-btn is-sp">
+    <div class="menu-btn is-sp">
       <span></span>
       <span></span>
       <span></span>
-    </div> -->
+    </div>
     <nav class="nav">
       <ul class="nav-list">
         <li><nuxt-link to="/">ホーム</nuxt-link></li>
