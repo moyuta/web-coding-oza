@@ -1,9 +1,7 @@
 <template>
   <div class="l-header">
-    <button class="menu-btn is-sp">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-btn" @click="clickMenu">
+      <img src="@/assets/svg/menu-btn.svg" alt="" />
     </button>
     <nav class="nav">
       <div class="nav-inner">
@@ -40,6 +38,14 @@ export default {
 };
 </script>
 
+<script setup>
+const isHamburger = ref(false);
+const clickMenu = () => {
+  console.log("おしたよ");
+  isHamburger.value = !isHamburger.value;
+};
+</script>
+
 <style lang='scss' scoped>
 .l-header {
   @include tablet {
@@ -49,30 +55,17 @@ export default {
   @include mobile {
     background-color: #fff;
     position: relative;
-    // height: 100vh;
-
-    .menu-btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 36px;
-      height: 36px;
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      background-color: #fff;
-      cursor: pointer;
-      & > * + * {
-        margin-block-start: 5px;
-      }
-      span {
-        display: inline-block;
-        width: 30px;
-        height: 4px;
-        background-color: #666;
-      }
+  }
+  button {
+    @include tablet {
+      display: none;
     }
+    width: 35px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+    cursor: pointer;
   }
 
   .nav {
@@ -81,7 +74,8 @@ export default {
       padding-block-end: 25px;
       position: absolute;
       width: 100%;
-      transform: translateX(-100vh);
+      // height: calc(100vh - 65px);
+      background-color: #fff;
       &-inner {
         border: 1px solid $colorText;
         margin-inline: 20px;
