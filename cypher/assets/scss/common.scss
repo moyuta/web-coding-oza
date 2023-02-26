@@ -109,3 +109,8 @@ dd {
   margin: 0;
 }
 
+
+.c-inner {
+  width: calc(100% - 3rem);
+  margin-inline: auto;
+}
