@@ -4,9 +4,6 @@ $baseFontFamily: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic,
 
 // Colors
 $colorText: #333;
-$main-color:#A7212F;
-$sub-color:#575D90;
-$btn-color:#F8F8FD;
 
 
 $tb:  768px;
@@ -37,20 +34,6 @@ $tb-min:  769px;
 @function vwSP($num){
   @return 100vw * calc($num * 2 / 750);
 }
-
-
-.is-pc {
-  display: none !important;
-  @include tablet {
-    display: block !important;
-  }
-}
-@include tablet {
-  .is-sp {
-    display: none !important;
-  }
-}
-
 
 
 * {
@@ -112,12 +95,7 @@ img {
 }
 
 a {
-  color: $colorText;
   text-decoration: none;
-  font-size: 200px;
-  &:hover{
-    opacity: .7;
-  }
 }
 
 li, nav ul, ol, ul{
@@ -131,78 +109,8 @@ dd {
   margin: 0;
 }
 
-fieldset{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
+
+.c-inner {
+  width: calc(100% - 3rem);
+  margin-inline: auto;
 }
-
-button{
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  text-indent:-9999px;
-
-}
-
-
-input,textarea,select {
-  margin: 0;
-	padding: 0;
-	background: none;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-input[type="submit"]{
-  cursor: pointer;
-
-}
-
-input {
-  &::placeholder{
-    color: #3d3d3d;
-  }
-}
-
-
-picture {
-  img {
-    max-width: 100%;
-  }
-}
-
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-
-input[disabled] {
-  -webkit-text-fill-color: $colorText;
-  opacity: 1;
-}
-
-
-summary{
-  cursor: pointer;
-  display: block;
-  list-style: none;
-  &::-webkit-details-marker{
-    display:none;
-  }
-}
-
