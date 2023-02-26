@@ -24,7 +24,9 @@
         <p>
           建築・建築デザイン・原状回復・内装解体・建物
           解体・アスベスト除去工事はウラシコにお任せく ださい！<br /><br />
-          <strong>株式会社ウラシコCYPHER（サイファー）</strong><br />
+          <strong
+            >株式会社ウラシコ<br class="is-sp" />CYPHER（サイファー）</strong
+          ><br />
 
           〒454-0982<br />
           愛知県名古屋市中川区西伏屋2丁目617番地<br />
@@ -82,6 +84,10 @@ export default {
   display: flex;
   justify-content: center;
   padding-block: 60px;
+  @include mobile {
+    flex-direction: column;
+    padding-block: 30px;
+  }
 }
 .logo {
   width: 300px;
@@ -89,9 +95,17 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  @include mobile {
+    justify-content: center;
+    margin-inline: auto;
+    width: vwSP(250);
+  }
   img {
     &:last-of-type {
       width: 200px;
+      @include mobile {
+        width: vwSP(150);
+      }
     }
   }
 }
@@ -100,6 +114,12 @@ export default {
   display: flex;
   gap: 60px;
   margin-inline: 60px;
+  @include mobile {
+    flex-direction: column;
+    gap: 10px;
+    margin-inline: 30px;
+    margin-block: 50px;
+  }
 }
 .list {
   & > * + * {
@@ -115,10 +135,20 @@ export default {
 
 .site-info {
   width: contWidth(600, 1920);
+  @include mobile {
+    width: 100%;
+  }
   p {
     border: double 5px #fff;
     padding: 15px 10px;
     margin-block-end: 10px;
+
+    strong {
+      @include mobile {
+        display: inline-block;
+        margin-block-end: 20px;
+      }
+    }
   }
 }
 
@@ -126,7 +156,9 @@ export default {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-
+  @include mobile {
+    display: none;
+  }
   .icon {
     img {
       width: 60px;
@@ -143,6 +175,9 @@ export default {
     text-align: center;
     box-shadow: 0 0 0 -100vmax;
     font-size: 22px;
+    @include mobile {
+      font-size: 11px;
+    }
   }
 }
 </style>
