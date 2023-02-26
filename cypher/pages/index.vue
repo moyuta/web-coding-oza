@@ -80,6 +80,10 @@ export default {
       margin-inline: 60px;
       border: 1px solid #000;
       padding: 20px;
+      @include mobile {
+        margin-inline: 0px;
+        padding: 15px;
+      }
       .more {
         text-align: right;
         font-size: 20px;
@@ -91,22 +95,32 @@ export default {
     margin-block-end: 60px;
     li {
       padding: 10px;
+
       a {
         display: flex;
         gap: 40px;
         color: $colorText;
+        @include mobile {
+          flex-direction: column;
+          gap: 20px;
+        }
         &:hover {
           opacity: 0.7;
         }
         img {
           width: 260px;
+          @include mobile {
+            margin-inline: auto;
+          }
         }
       }
-      .content {
-      }
+
       .date {
       }
       .title {
+        @include mobile {
+          margin-block-end: 20px;
+        }
       }
       .text {
       }
