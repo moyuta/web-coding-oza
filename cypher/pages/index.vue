@@ -86,7 +86,10 @@ export default {
       }
       .more {
         text-align: right;
-        font-size: 20px;
+        a {
+          font-size: 20px;
+          color: $colorText;
+        }
       }
     }
   }
