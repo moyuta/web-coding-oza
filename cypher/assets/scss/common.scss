@@ -36,6 +36,19 @@ $tb-min:  769px;
 }
 
 
+.is-pc {
+  display: none !important;
+  @include tablet {
+    display: block !important;
+  }
+}
+@include tablet {
+  .is-sp {
+    display: none !important;
+  }
+}
+
+
 
 * {
   box-sizing: border-box;
