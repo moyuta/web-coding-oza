@@ -15,24 +15,25 @@
 	</div>
 
 	<div class="contact-form">
-		<p>お問合せ・お見積</p>
-		<defaultInput v-model="form"></defaultInput>
+		<p class="sub-title">お問合せ・お見積</p>
+		<p class="sub-title-comment">
+			タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。
+		</p>
+		<p class="attention-text">※ こちらのマークは必須項目です</p>
+		<defaultInput
+			style="width: 70%; margin: 0 auto"
+			v-model="form"
+			label="お名前"
+			:required="true"
+		></defaultInput>
 	</div>
 
 	<div></div>
 </template>
 
-<script>
+<script setup>
 import { defaultInput } from '../components/organisms/Input'
-export default {
-	components: { defaultInput },
-	setup() {
-		const form = ref('')
-		return {
-			form,
-		}
-	},
-}
+const form = ref('')
 </script>
 
 <style lang="scss" scoped>
@@ -41,7 +42,7 @@ header {
 	z-index: 10;
 	width: 100%;
 }
-
+// main画像
 .header-title {
 	height: 100px;
 	width: 100vw;
@@ -72,5 +73,24 @@ header {
 }
 .img-text-sub {
 	font-size: 15px;
+}
+// フォーム入力
+
+.contact-form {
+	padding: 0 20%;
+}
+
+.sub-title {
+	font-weight: bold;
+	font-size: 50px;
+	text-align: center;
+	margin: 50px;
+}
+.sub-title-comment {
+	width: 100%;
+	margin: 20px 0;
+}
+.attention-text {
+	color: red;
 }
 </style>
