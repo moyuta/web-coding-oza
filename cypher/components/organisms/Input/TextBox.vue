@@ -1,15 +1,15 @@
 <template>
-	<div class="input-content">
-		<div class="input-area">
+	<div class="text-content">
+		<div class="text-area">
 			<div class="attention-text">
 				{{ required ? 'この項目は必須です' : '' }}
 			</div>
-			<div class="label-input">
+			<div class="label-text">
 				<div class="label-area">
 					<div>{{ label }}</div>
 					<div class="attention">{{ required ? '※' : '' }}</div>
 				</div>
-				<input
+				<textarea
 					type="text"
 					:value="modelValue"
 					@input="$emit('update:modelValue', $event.target.value)"
@@ -35,18 +35,18 @@ const props = defineProps({
 	 * ラベル
 	 * @example お名前、メールアドレス、電話番号erc..
 	 */
-	label: { type: String, default: '' },
+	label: { type: String, default: '', required: true },
 })
 </script>
 
 <style lang="scss" scoped>
-input {
+textarea {
 	width: 60%;
-	height: 40px;
+	height: 180px;
 	margin: 10px 0;
+	resize: none;
 }
-
-.input-content {
+.text-content {
 	width: 100%;
 }
 
@@ -56,17 +56,17 @@ input {
 	text-align: left;
 	width: 40%;
 	gap: 10px;
+	margin: 20px 0;
 }
 .attention {
 	color: red;
 }
-.input-area {
+.text-area {
 	width: 110%;
 }
-.label-input {
+.label-text {
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
 	font-size: 25px;
 }
 .attention-text {

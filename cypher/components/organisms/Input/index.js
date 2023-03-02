@@ -1,3 +1,5 @@
-import defaultInput from './defaultInput'
+import DefaultInput from './DefaultInput'
+import TextBox from './TextBox'
+import CheckBox from './CheckBox'
 
-export { defaultInput }
+export { DefaultInput, TextBox, CheckBox }
