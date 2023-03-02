@@ -56,6 +56,7 @@ input {
 	text-align: left;
 	width: 40%;
 	gap: 10px;
+	font-weight: bold;
 }
 .attention {
 	color: red;

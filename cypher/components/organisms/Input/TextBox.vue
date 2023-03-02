@@ -42,7 +42,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 textarea {
 	width: 60%;
-	height: 180px;
+	height: 250px;
 	margin: 10px 0;
 	resize: none;
 }
@@ -56,7 +56,8 @@ textarea {
 	text-align: left;
 	width: 40%;
 	gap: 10px;
-	margin: 20px 0;
+	margin: 10px 0;
+	font-weight: bold;
 }
 .attention {
 	color: red;

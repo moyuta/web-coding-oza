@@ -84,6 +84,8 @@ input {
 	text-align: left;
 	width: 40%;
 	gap: 10px;
+	margin: 10px 0;
+	font-weight: bold;
 }
 .check-area {
 	display: flex;
@@ -101,7 +103,6 @@ input {
 .label-input {
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
 	font-size: 25px;
 }
 .attention-text {
