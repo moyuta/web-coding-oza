@@ -48,8 +48,6 @@ $tb-min:  769px;
   }
 }
 
-
-
 * {
   box-sizing: border-box;
   scroll-margin-top: var(--header-height);
@@ -122,6 +120,12 @@ li, nav ul, ol, ul{
 dl,
 dd {
   margin: 0;
+}
+
+hr {
+  background: #dcdcdc;
+  height: 2px;
+  border: none;
 }
 
 
