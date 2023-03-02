@@ -40,15 +40,26 @@ const slideFunction = ({ slidingToIndex }) => {
 img {
   height: 300px;
   width: 500px;
+  @include mobile {
+    width: 100%;
+    height: auto;
+  }
 }
 .gallery {
   display: flex;
   gap: 20px;
   margin: 40px 0;
   justify-content: center;
+  @include mobile {
+    gap: 10px;
+  }
   img {
     height: 80px;
     width: 120px;
+    @include mobile {
+      width: 60px;
+      height: 40px;
+    }
   }
   button: {
     background: #fff;
