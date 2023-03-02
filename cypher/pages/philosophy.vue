@@ -22,20 +22,23 @@
           <img src="@/assets/img/sec-img02.png" alt="" />
         </div>
         <div class="column">
-          <h4>テキストが入ります。</h4>
           <p>
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
         </div>
       </div>
       <div class="two-columns">
+        <!-- mobileでは画像を上にしたい -->
+        <div class="column is-sp">
+          <img src="@/assets/img/sec-img02.png" alt="" />
+        </div>
         <div class="column">
-          <h4>テキストが入ります。</h4>
           <p>
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
         </div>
-        <div class="column">
+        <!-- pcでは画像を右にしたい -->
+        <div class="column is-pc">
           <img src="@/assets/img/sec-img02.png" alt="" />
         </div>
       </div>
@@ -66,7 +69,9 @@
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
         </div>
-        <div class="column"><BasicTable :contents="TableContents" /></div>
+        <div class="column">
+          <BasicTable :contents="TableContents" class="table-content" />
+        </div>
       </div>
     </div>
     <hr />
@@ -115,7 +120,7 @@
         <div class="column">
           <div class="num-text">
             <CircleNumber text="1" />
-            <p>技術確認</p>
+            <h4>技術確認</h4>
           </div>
           <div class="column-image">
             <img src="@/assets/img/sec-img02.png" alt="" />
@@ -127,7 +132,7 @@
         <div class="column">
           <div class="num-text">
             <CircleNumber text="1" />
-            <p>技術確認</p>
+            <h4>技術確認</h4>
           </div>
           <div class="column-image">
             <img src="@/assets/img/sec-img02.png" alt="" />
@@ -139,7 +144,7 @@
         <div class="column">
           <div class="num-text">
             <CircleNumber text="1" />
-            <p>技術確認</p>
+            <h4>技術確認</h4>
           </div>
           <div class="column-image">
             <img src="@/assets/img/sec-img02.png" alt="" />
@@ -151,7 +156,7 @@
         <div class="column">
           <div class="num-text">
             <CircleNumber text="1" />
-            <p>技術確認</p>
+            <h4>技術確認</h4>
           </div>
           <div class="column-image">
             <img src="@/assets/img/sec-img02.png" alt="" />
@@ -261,6 +266,60 @@
           <tr>
             <td width="280px">空間を和らげ、安らぎを感じる</td>
             <td><img src="@/assets/img/sec-img02.png" alt="" /></td>
+            <td>
+              昨今、情報技術は目まぐるしい勢いで進化を続け、インダーネットでは、1日に膨大な量の情報が飛び交っています。インターネットで現代人が1日に触れる兵法量は江戸時代の1年分とも言われています。
+            </td>
+          </tr>
+        </template>
+        <template #sp-table>
+          <tr>
+            <th>空間を和らげ、安らぎを感じる</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="@/assets/img/sec-img02.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              昨今、情報技術は目まぐるしい勢いで進化を続け、インダーネットでは、1日に膨大な量の情報が飛び交っています。インターネットで現代人が1日に触れる兵法量は江戸時代の1年分とも言われています。
+            </td>
+          </tr>
+          <tr>
+            <th>空間を和らげ、安らぎを感じる</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="@/assets/img/sec-img02.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              昨今、情報技術は目まぐるしい勢いで進化を続け、インダーネットでは、1日に膨大な量の情報が飛び交っています。インターネットで現代人が1日に触れる兵法量は江戸時代の1年分とも言われています。
+            </td>
+          </tr>
+          <tr>
+            <th>空間を和らげ、安らぎを感じる</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="@/assets/img/sec-img02.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              昨今、情報技術は目まぐるしい勢いで進化を続け、インダーネットでは、1日に膨大な量の情報が飛び交っています。インターネットで現代人が1日に触れる兵法量は江戸時代の1年分とも言われています。
+            </td>
+          </tr>
+          <tr>
+            <th>空間を和らげ、安らぎを感じる</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="@/assets/img/sec-img02.png" alt="" />
+            </td>
+          </tr>
+          <tr>
             <td>
               昨今、情報技術は目まぐるしい勢いで進化を続け、インダーネットでは、1日に膨大な量の情報が飛び交っています。インターネットで現代人が1日に触れる兵法量は江戸時代の1年分とも言われています。
             </td>
@@ -401,6 +460,9 @@ export default {
     background-image: url("@/assets/img/sec-img02.png");
     background-size: cover;
     position: relative;
+    @include mobile {
+      background-position: center bottom;
+    }
   }
 }
 .philosophy {
@@ -418,6 +480,17 @@ export default {
     width: 400px;
     padding-top: 40px;
   }
+  @include mobile {
+    margin-right: 0px;
+    padding: 20px;
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+    p {
+      width: 100%;
+    }
+  }
 }
 .section {
   margin: 100px 100px;
@@ -427,16 +500,32 @@ export default {
     padding-bottom: 40px;
     font-weight: normal;
   }
+  @include mobile {
+    margin: 100px 20px;
+  }
 }
 .section-center {
   padding: 0px 10%;
+  @include mobile {
+    padding: 0;
+  }
 }
 @mixin flex-column($gap, $num) {
   display: flex;
   gap: $gap;
   padding: 30px 0;
+  @include mobile {
+    display: block;
+  }
   .column {
     width: calc(100% / $num);
+
+    @include mobile {
+      width: 100%;
+      p {
+        padding-top: 20px;
+      }
+    }
   }
 }
 .column-image {
@@ -460,8 +549,10 @@ export default {
   display: flex;
   gap: 20px;
   align-items: center;
-  p {
+  margin-top: 20px;
+  h4 {
     font-size: 30px;
+    font-weight: normal;
   }
 }
 
@@ -477,6 +568,10 @@ export default {
     img {
       width: 150px;
       height: 100px;
+      @include mobile {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -490,12 +585,21 @@ export default {
   border-bottom: 1px solid #c0c0c0;
   margin: 40px auto;
   padding-bottom: 40px;
+  @include mobile {
+    width: 100%;
+    display: block;
+    padding-bottom: 0px;
+    p {
+      margin-bottom: 10px;
+    }
+  }
 }
 .chip-list {
   display: flex;
   gap: 20px;
   justify-content: center;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 .slide-description {
   padding: 10px 20px;
@@ -524,6 +628,11 @@ img {
 .link {
   a {
     margin: 10px auto;
+  }
+}
+.table-content {
+  @include mobile {
+    margin-top: 30px;
   }
 }
 </style>

@@ -1,10 +1,23 @@
 <template>
-  <table class="" border="1">
-    <tr v-for="(content, key) in contents" :key="key">
-      <th>{{ content.title }}:</th>
-      <td>{{ content.text }}</td>
-    </tr>
-  </table>
+  <div>
+    <table class="is-pc" border="1">
+      <tr v-for="(content, key) in contents" :key="key">
+        <th>{{ content.title }}:</th>
+        <td>{{ content.text }}</td>
+      </tr>
+    </table>
+    <table class="is-sp" border="1">
+      <!-- vue3からtemplate keyは許容されるので無視でOK -->
+      <template v-for="(content, key) in contents" :key="key">
+        <tr>
+          <th>{{ content.title }}:</th>
+        </tr>
+        <tr>
+          <td>{{ content.text }}</td>
+        </tr>
+      </template>
+    </table>
+  </div>
 </template>
 
 <script>

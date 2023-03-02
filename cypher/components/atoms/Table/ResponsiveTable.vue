@@ -1,10 +1,15 @@
 <template>
-  <table class="" border="1">
-    <tr>
-      <slot name="head"></slot>
-    </tr>
-    <slot name="content"></slot>
-  </table>
+  <div>
+    <table class="is-pc" border="1">
+      <tr>
+        <slot name="head"></slot>
+      </tr>
+      <slot name="content"></slot>
+    </table>
+    <table class="is-sp" border="1">
+      <slot name="sp-table"></slot>
+    </table>
+  </div>
 </template>
   
 <script>

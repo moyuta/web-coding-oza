@@ -36,6 +36,7 @@ export default {
   background: gray;
   display: flex;
   border: none;
+  cursor: pointer;
   p {
     font-size: 28px;
     background: none;
@@ -44,6 +45,10 @@ export default {
     width: 95%;
     padding-left: 20px;
     text-align: left;
+    color: white;
+  }
+  .mark {
+    color: white;
   }
 }
 .description {
