@@ -1,6 +1,21 @@
 <template>
   <div class="top-page">
     <div class="top-section"></div>
+    <div class="logo">
+      <img class="logo-svg" src="@/assets/svg/logo.svg" alt="cypher" />
+      <img
+        class="logo-text"
+        src="@/assets/svg/logo-text.svg"
+        alt="interior design & Construction"
+      />
+    </div>
+    <div class="scroll-area">
+      <img src="@/assets/svg/scroll.svg" alt="" />
+      <p>
+        建築デザインあああああああああああああああああああああああああああああああああ
+        ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+      </p>
+    </div>
     <transition>
       <section class="concept-section" data-concept="01">
         <div class="c-inner">
@@ -93,7 +108,7 @@
             </li>
           </ul>
           <div class="more">
-            <nuxt-link to="https://nuxtjs.org"> READ MORE </nuxt-link>
+            <nuxt-link to="https://nuxtjs.org"> read more </nuxt-link>
           </div>
         </div>
       </div>
@@ -142,6 +157,25 @@ export default {
     height: 800px;
     background-image: url("@/assets/img/kv-img01.png");
     background-size: cover;
+    position: relative;
+    @include mobile {
+      background-position: center bottom;
+    }
+  }
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  &-svg {
+    width: 300px;
+    margin-bottom: 80px;
+  }
+  &-text {
+    width: 300px;
   }
 }
 .concept {
@@ -211,6 +245,7 @@ export default {
         text-align: right;
         a {
           color: #fff;
+          border-bottom: 1px solid white;
           &:hover {
             opacity: 0.7;
           }
@@ -245,6 +280,10 @@ export default {
         a {
           font-size: 20px;
           color: $colorText;
+          border-bottom: 1px solid black;
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -283,6 +322,21 @@ export default {
       }
       .text {
       }
+    }
+  }
+}
+.scroll-area {
+  text-align: center;
+  img {
+    width: 100px;
+    margin: 20px auto;
+  }
+  p {
+    margin: 20px auto;
+    padding: 0 150px;
+    font-weight: bold;
+    @include mobile {
+      padding: 0 50px;
     }
   }
 }

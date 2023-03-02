@@ -170,62 +170,60 @@
     <hr />
     <div class="section">
       <h3>情報技術とデザインと思想</h3>
-      <div class="three-columns">
+      <div class="five-columns">
         <div class="column">
-          <div class="column-image">
+          <div class="card">
             <img src="@/assets/img/sec-img02.png" alt="" />
-          </div>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
-          <div class="link">
-            <LinkButton />
+            <div class="card-description">
+              <h3>テキスト</h3>
+              <p>
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
           </div>
         </div>
         <div class="column">
-          <div class="column-image">
+          <div class="card">
             <img src="@/assets/img/sec-img02.png" alt="" />
-          </div>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
-          <div class="link">
-            <LinkButton />
+            <div class="card-description">
+              <h3>テキスト</h3>
+              <p>
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
           </div>
         </div>
         <div class="column">
-          <div class="column-image">
+          <div class="card">
             <img src="@/assets/img/sec-img02.png" alt="" />
-          </div>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
-          <div class="link">
-            <LinkButton />
-          </div>
-        </div>
-      </div>
-      <div class="two-columns">
-        <div class="column">
-          <div class="column-image">
-            <img src="@/assets/img/sec-img02.png" alt="" />
-          </div>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
-          <div class="link">
-            <LinkButton />
+            <div class="card-description">
+              <h3>テキスト</h3>
+              <p>
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
           </div>
         </div>
         <div class="column">
-          <div class="column-image">
+          <div class="card">
             <img src="@/assets/img/sec-img02.png" alt="" />
+            <div class="card-description">
+              <h3>テキスト</h3>
+              <p>
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
           </div>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
-          <div class="link">
-            <LinkButton />
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="@/assets/img/sec-img02.png" alt="" />
+            <div class="card-description">
+              <h3>テキスト</h3>
+              <p>
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -532,6 +530,8 @@ export default {
   margin: 50px 0;
 }
 .two-columns {
+  align-items: center;
+  justify-content: center;
   @include flex-column(80px, 2);
   h4 {
     font-size: 28px;
@@ -542,6 +542,11 @@ export default {
   @include flex-column(40px, 3);
 }
 .four-columns {
+  @include flex-column(30px, 4);
+}
+.five-columns {
+  justify-content: center;
+  flex-wrap: wrap;
   @include flex-column(30px, 4);
 }
 
@@ -633,6 +638,20 @@ img {
 .table-content {
   @include mobile {
     margin-top: 30px;
+  }
+}
+.card {
+  background: #c0c0c0;
+  max-width: 300px;
+  @include mobile {
+    margin: 20px auto;
+  }
+  img {
+    max-width: 300px;
+    height: 170px;
+  }
+  &-description {
+    padding: 30px;
   }
 }
 </style>
