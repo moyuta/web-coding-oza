@@ -1,25 +1,27 @@
 <template>
   <div class="top-page">
-    <div class="top-section"></div>
-    <div class="logo">
-      <img class="logo-svg" src="@/assets/svg/logo.svg" alt="cypher" />
-      <img
-        class="logo-text"
-        src="@/assets/svg/logo-text.svg"
-        alt="interior design & Construction"
-      />
-    </div>
+    <div class="top-section flash-3"></div>
+    <transition name="fade">
+      <div class="logo" v-show="section1">
+        <img class="logo-svg" src="@/assets/svg/logo.svg" alt="cypher" />
+        <img
+          class="logo-text"
+          src="@/assets/svg/logo-text.svg"
+          alt="interior design & Construction"
+        />
+      </div>
+    </transition>
     <div class="scroll-area">
-      <img src="@/assets/svg/scroll.svg" alt="" />
+      <img class="flash" src="@/assets/svg/scroll.svg" alt="" />
       <p>
         建築デザインあああああああああああああああああああああああああああああああああ
         ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
       </p>
     </div>
-    <transition>
-      <section class="concept-section" data-concept="01">
-        <div class="c-inner">
-          <div class="-details">
+    <section class="concept-section" data-concept="01">
+      <div class="c-inner">
+        <transition name="float">
+          <div class="-details" v-show="section2step1">
             <h2>内装解体をデザインする</h2>
             <p>
               母体が母体が母体が母体が母体が母体が母体が母体が母体が母体が母体が母体が
@@ -28,35 +30,39 @@
               <nuxt-link to="#">read more</nuxt-link>
             </div>
           </div>
-        </div>
-      </section>
-    </transition>
-    <transition>
-      <section class="concept-section" data-concept="02">
-        <div class="c-inner">
-          <div class="-details">
+        </transition>
+      </div>
+    </section>
+
+    <section class="concept-section" data-concept="02">
+      <div class="c-inner">
+        <transition name="float">
+          <div class="-details" v-show="section2step2">
             <h2>予算もデザインする</h2>
             <p>私たちは</p>
             <div class="link">
               <nuxt-link to="#">read more</nuxt-link>
             </div>
           </div>
-        </div>
-      </section>
-    </transition>
+        </transition>
+      </div>
+    </section>
+
     <section class="concept-section" data-concept="03">
-      <div class="c-inner">
-        <div class="-details">
-          <h2>情報技術とデザインと思想</h2>
-          <p>私たちは</p>
-          <div class="link">
-            <nuxt-link to="#">read more</nuxt-link>
+      <transition name="float">
+        <div class="c-inner" v-show="section2step4">
+          <div class="-details">
+            <h2>情報技術とデザインと思想</h2>
+            <p>私たちは</p>
+            <div class="link">
+              <nuxt-link to="#">read more</nuxt-link>
+            </div>
+          </div>
+          <div class="img">
+            <img src="@/assets/svg/mark.svg" alt="" />
           </div>
         </div>
-        <div class="img">
-          <img src="@/assets/svg/mark.svg" alt="" />
-        </div>
-      </div>
+      </transition>
     </section>
     <section class="concept-section" data-concept="other">
       <div class="c-inner">
@@ -64,7 +70,7 @@
           <div class="item">
             <nuxt-link to="#">
               <h3>建築の流れ</h3>
-              <img src="@/assets/img/flow-img.png" alt="" />
+              <img src="@/assets/img/flow-img.png" class="flash-2" alt="" />
               <p>
                 CYPHERは、企画・デザイン・設計・施工・アフターメンテナンスまで一貫して携わりながら、情報技術の負荷価値もご提供していきます。
               </p>
@@ -73,7 +79,7 @@
           <div class="item">
             <nuxt-link to="#">
               <h3>過去の事例</h3>
-              <img src="@/assets/img/jirei-img.png" alt="" />
+              <img src="@/assets/img/jirei-img.png" class="flash-2" alt="" />
               <p>
                 情報技術とデザイン思想を結び付けたCYPHERの事例をご覧ください。
               </p>
@@ -82,7 +88,7 @@
           <div class="item">
             <nuxt-link to="#">
               <h3>お問合せ・お見積</h3>
-              <img src="@/assets/img/contact-img.png" alt="" />
+              <img src="@/assets/img/contact-img.png" class="flash-2" alt="" />
               <p>CYPHERへのアクセスとなります。</p>
             </nuxt-link>
           </div>
@@ -122,6 +128,35 @@
 <script >
 export default {
   setup() {
+    onMounted(() => {
+      window.addEventListener("scroll", getScroll);
+      setTimeout(() => {
+        section1.value = true;
+      }, 1000);
+    });
+    const scrollY = ref(0);
+    const getScroll = () => {
+      scrollY.value = window.scrollY;
+
+      if (scrollY.value > 400) {
+        section2step1.value = true;
+      }
+      if (scrollY.value > 1500) {
+        section2step2.value = true;
+      }
+      if (scrollY.value > 2000) {
+        section2step3.value = true;
+      }
+      if (scrollY.value > 2500) {
+        section2step4.value = true;
+      }
+    };
+    const section1 = ref(false);
+    const section2step1 = ref(false);
+    const section2step2 = ref(false);
+    const section2step3 = ref(false);
+    const section2step4 = ref(false);
+
     const newsList = reactive([
       {
         to: "#",
@@ -145,7 +180,15 @@ export default {
         src: "https://placehold.jp/150x150.png",
       },
     ]);
-    return { newsList };
+    return {
+      newsList,
+      section1,
+      section2step1,
+      section2step2,
+      section2step3,
+      section2step4,
+      scrollY,
+    };
   },
 };
 </script>
@@ -338,6 +381,94 @@ export default {
     @include mobile {
       padding: 0 50px;
     }
+  }
+}
+/* 表示時の状態 */
+.fade-enter-from {
+  opacity: 0;
+}
+/* 表示時のアクティブ状態 */
+.fade-enter-active {
+  transition: all 2s;
+}
+/* 表示時の終了状態 */
+.fade-enter-to {
+  opacity: 1;
+}
+/* 非表示時の状態 */
+.fade-leave-from {
+  opacity: 1;
+}
+/* 非表示時のアクティブ状態 */
+.fade-leave-active {
+  transition: all 0.5s;
+}
+/* 非表示時の終了状態 */
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 表示時の状態 */
+.float-enter-from {
+  opacity: 0;
+}
+/* 表示時のアクティブ状態 */
+.float-enter-active {
+  transition: all 4s;
+}
+/* 表示時の終了状態 */
+.float-enter-to {
+  opacity: 1;
+}
+/* 非表示時の状態 */
+.float-leave-from {
+  opacity: 1;
+}
+/* 非表示時のアクティブ状態 */
+.float-leave-active {
+  transition: all 2s;
+}
+/* 非表示時の終了状態 */
+.fade-leave-to {
+  opacity: 0;
+}
+
+.flash {
+  animation: flash 1s linear infinite;
+}
+
+.flash-2 {
+  animation: flash 5s linear infinite;
+}
+.flash-3 {
+  animation: flash-img 15s linear infinite;
+}
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash-img {
+  0%,
+  100% {
+    opacity: 1;
+    background-image: url("@/assets/img/kv-img01.png");
+  }
+
+  50% {
+    opacity: 1;
+    background-image: url("@/assets/img/flow-img.png");
+  }
+
+  25% {
+    opacity: 1;
+    background-image: url("@/assets/img/jirei-img.png");
   }
 }
 </style>
