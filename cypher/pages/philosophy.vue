@@ -647,10 +647,16 @@ img {
   max-width: 300px;
   @include mobile {
     margin: 20px auto;
+    max-width: none;
+    width: 100%;
   }
   img {
     max-width: 300px;
     height: 170px;
+    @include mobile {
+      max-width: none;
+      width: 100%;
+    }
   }
   &-description {
     padding: 30px;
