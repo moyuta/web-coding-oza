@@ -90,7 +90,7 @@ export default {
   }
 }
 .logo {
-  width: 300px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,8 +101,9 @@ export default {
     width: vwSP(250);
   }
   img {
+    width: 70%;
     &:last-of-type {
-      width: 200px;
+      width: 140px;
       @include mobile {
         width: vwSP(150);
       }
@@ -161,7 +162,7 @@ export default {
   }
   .icon {
     img {
-      width: 60px;
+      width: 45px;
     }
   }
 }

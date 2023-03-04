@@ -24,5 +24,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 </style>

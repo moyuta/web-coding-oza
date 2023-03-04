@@ -37,7 +37,7 @@
     <section class="concept-section" data-concept="02">
       <div class="c-inner">
         <transition name="float">
-          <div class="-details" v-show="section2step2">
+          <div class="-details right-detail" v-show="section2step2">
             <h2>予算もデザインする</h2>
             <p>私たちは</p>
             <div class="link">
@@ -228,6 +228,7 @@ export default {
 
     .c-inner {
       display: flex;
+      flex-wrap: wrap;
     }
     &[data-concept="01"] {
       background: url("@/assets/img/sec-img01.png") no-repeat center center /
@@ -250,8 +251,14 @@ export default {
         width: 100%;
         gap: 20px;
         margin-block-start: 0;
+        @include mobile {
+          display: block;
+        }
         .item {
           width: calc(100%);
+          @include mobile {
+            margin: 60px 0;
+          }
           a {
             color: $colorText;
             &:hover {
@@ -276,6 +283,9 @@ export default {
       width: contWidth(750, 1920);
       color: #fff;
       margin-block-start: 150px;
+      @include mobile {
+        width: 100%;
+      }
       h2 {
         font-size: 40px;
         margin-block-end: 40px;
@@ -299,6 +309,12 @@ export default {
       width: contWidth(290, 1920);
       margin-inline: auto;
       margin-block-start: 240px;
+      @include mobile {
+        width: 140px;
+        margin-inline: 0;
+        margin-block-start: 0;
+        margin: 80px auto;
+      }
     }
   }
 }
@@ -469,6 +485,12 @@ export default {
   25% {
     opacity: 1;
     background-image: url("@/assets/img/jirei-img.png");
+  }
+}
+.right-detail {
+  padding-right: 100px;
+  @include mobile {
+    padding: 0;
   }
 }
 </style>

@@ -440,10 +440,10 @@ export default {
       { title: "クライアント", text: "個人" },
     ]);
     const imageList = ref([
-      "_nuxt/assets/img/sec-img02.png",
-      "_nuxt/assets/img/sec-img02.png",
-      "_nuxt/assets/img/sec-img02.png",
-      "_nuxt/assets/img/sec-img02.png",
+      "sec-img02.png",
+      "sec-img02.png",
+      "sec-img02.png",
+      "sec-img02.png",
     ]);
     return { TableContents, imageList };
   },
@@ -636,8 +636,10 @@ img {
   }
 }
 .table-content {
+  width: 450px;
   @include mobile {
     margin-top: 30px;
+    width: 100%;
   }
 }
 .card {
