@@ -2,7 +2,7 @@
   <div class="slider-inner">
     <Carousel @slide-start="slideFunction" ref="myCarousel">
       <Slide v-for="(image, key) in images" :key="key">
-        <img :src="image" alt="" />
+        <img :src="getImg(image)" alt="" />
       </Slide>
       <template #addons>
         <Navigation />
@@ -10,11 +10,12 @@
     </Carousel>
     <div class="gallery">
       <button
+        @click="clickImg(key)"
         v-for="(image, key) in images"
         :key="key"
         :class="key == currentPage ? 'focused-img' : 'non-focused-img'"
       >
-        <img :src="image" alt="" />
+        <img :src="getImg(image)" alt="" />
       </button>
     </div>
   </div>
@@ -33,6 +34,13 @@ const props = defineProps({
 });
 const slideFunction = ({ slidingToIndex }) => {
   currentPage.value = slidingToIndex;
+};
+const getImg = (file) => {
+  return new URL(`../../../assets/img/${file}`, import.meta.url).href;
+};
+const clickImg = (carouselNum) => {
+  // カルーセル番号変える
+  myCarousel.value.slideTo(carouselNum);
 };
 </script>
 

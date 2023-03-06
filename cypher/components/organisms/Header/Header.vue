@@ -64,7 +64,7 @@ export default {
 
 <style lang='scss' scoped>
 header {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   width: 100%;
 }
@@ -91,6 +91,9 @@ header {
     padding: 20px;
     a {
       color: #fff;
+      &:hover {
+        opacity: 0.7;
+      }
     }
     &-sp {
       display: block;
@@ -100,6 +103,9 @@ header {
       }
       a {
         color: #2d2d2d;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
