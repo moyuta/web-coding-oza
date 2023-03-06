@@ -10,6 +10,7 @@
     </Carousel>
     <div class="gallery">
       <button
+        @click="clickImg(key)"
         v-for="(image, key) in images"
         :key="key"
         :class="key == currentPage ? 'focused-img' : 'non-focused-img'"
@@ -36,6 +37,10 @@ const slideFunction = ({ slidingToIndex }) => {
 };
 const getImg = (file) => {
   return new URL(`../../../assets/img/${file}`, import.meta.url).href;
+};
+const clickImg = (carouselNum) => {
+  // カルーセル番号変える
+  myCarousel.value.slideTo(carouselNum);
 };
 </script>
 

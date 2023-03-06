@@ -629,6 +629,7 @@ export default {
 }
 img {
   width: 100%;
+  height: auto;
 }
 .link {
   a {

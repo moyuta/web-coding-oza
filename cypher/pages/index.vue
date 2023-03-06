@@ -427,6 +427,7 @@ export default {
 /* 表示時の状態 */
 .float-enter-from {
   opacity: 0;
+  transform: translateY(20px);
 }
 /* 表示時のアクティブ状態 */
 .float-enter-active {
@@ -457,7 +458,8 @@ export default {
   animation: flash 5s linear infinite;
 }
 .flash-3 {
-  animation: flash-img 15s linear infinite;
+  animation: flash-img 10s steps(1, end) infinite;
+  // 3枚で10sという意味,4枚なら12sにすれば一枚当たり3s表示
 }
 @keyframes flash {
   0%,
@@ -471,18 +473,19 @@ export default {
 }
 
 @keyframes flash-img {
+  // 3枚を割り算して表示
   0%,
   100% {
     opacity: 1;
     background-image: url("@/assets/img/kv-img01.png");
   }
 
-  50% {
+  66% {
     opacity: 1;
     background-image: url("@/assets/img/flow-img.png");
   }
 
-  25% {
+  33% {
     opacity: 1;
     background-image: url("@/assets/img/jirei-img.png");
   }
